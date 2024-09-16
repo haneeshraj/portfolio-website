@@ -1,0 +1,618 @@
+$themes: (
+  light: (
+    text: #050606,
+    background: #fcfdfd,
+    primary: #60af8b,
+    secondary: #99d6ba,
+    accent: #6fd3a6,
+  ),
+  dark: (
+    text: #f9fafa,
+    background: #020303,
+    primary: #509f7c,
+    secondary: #29664a,
+    accent: #2c9063,
+  ),
+);
+
+@mixin set-theme($theme-name) {
+  --text: #{map-get(map-get($themes, $theme-name), text)};
+  --background: #{map-get(map-get($themes, $theme-name), background)};
+  --primary: #{map-get(map-get($themes, $theme-name), primary)};
+  --secondary: #{map-get(map-get($themes, $theme-name), secondary)};
+  --accent: #{map-get(map-get($themes, $theme-name), accent)};
+  --font-family: "Clash Display", sans-serif;
+
+  $text-color-rgb: map-get(map-get($themes, $theme-name), text);
+
+  --text5: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.05
+  );
+  --text10: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.1
+  );
+
+  --text15: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.15
+  );
+  --text20: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.2
+  );
+  --text25: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.25
+  );
+
+  --text30: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.3
+  );
+
+  --text35: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.35
+  );
+  --text40: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.4
+  );
+
+  --text45: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.45
+  );
+  --text50: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.5
+  );
+  --text55: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.55
+  );
+  --text60: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.6
+  );
+  --text65: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.65
+  );
+  --text70: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.7
+  );
+  --text75: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.75
+  );
+  --text80: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.8
+  );
+  --text85: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.85
+  );
+  --text90: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.9
+  );
+  --text95: hsl(
+    #{hue($text-color-rgb)},
+    #{saturation($text-color-rgb)},
+    #{lightness($text-color-rgb)},
+    0.95
+  );
+
+  $background-color-rgb: map-get(map-get($themes, $theme-name), background);
+
+  --background5: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.05
+  );
+  --background10: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.1
+  );
+  --background15: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.15
+  );
+  --background20: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.2
+  );
+  --background25: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.25
+  );
+  --background30: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.3
+  );
+  --background35: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.35
+  );
+  --background40: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.4
+  );
+  --background45: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.45
+  );
+  --background50: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.5
+  );
+  --background55: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.55
+  );
+  --background60: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.6
+  );
+  --background65: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.65
+  );
+  --background70: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.7
+  );
+  --background75: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.75
+  );
+  --background80: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.8
+  );
+  --background85: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.85
+  );
+  --background90: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.9
+  );
+  --background95: hsl(
+    #{hue($background-color-rgb)},
+    #{saturation($background-color-rgb)},
+    #{lightness($background-color-rgb)},
+    0.95
+  );
+
+  $primary-color-rgb: map-get(map-get($themes, $theme-name), primary);
+
+  --primary5: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.05
+  );
+  --primary10: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.1
+  );
+  --primary15: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.15
+  );
+  --primary20: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.2
+  );
+  --primary25: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.25
+  );
+  --primary30: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.3
+  );
+  --primary35: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.35
+  );
+  --primary40: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.4
+  );
+  --primary45: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.45
+  );
+  --primary50: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.5
+  );
+  --primary55: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.55
+  );
+  --primary60: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.6
+  );
+  --primary65: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.65
+  );
+  --primary70: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.7
+  );
+  --primary75: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.75
+  );
+  --primary80: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.8
+  );
+  --primary85: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.85
+  );
+  --primary90: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.9
+  );
+  --primary95: hsl(
+    #{hue($primary-color-rgb)},
+    #{saturation($primary-color-rgb)},
+    #{lightness($primary-color-rgb)},
+    0.95
+  );
+
+  $secondary-color-rgb: map-get(map-get($themes, $theme-name), secondary);
+
+  --secondary5: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.05
+  );
+  --secondary10: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.1
+  );
+  --secondary15: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.15
+  );
+  --secondary20: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.2
+  );
+  --secondary25: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.25
+  );
+  --secondary30: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.3
+  );
+  --secondary35: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.35
+  );
+  --secondary40: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.4
+  );
+  --secondary45: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.45
+  );
+  --secondary50: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.5
+  );
+  --secondary55: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.55
+  );
+  --secondary60: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.6
+  );
+  --secondary65: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.65
+  );
+  --secondary70: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.7
+  );
+  --secondary75: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.75
+  );
+  --secondary80: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.8
+  );
+  --secondary85: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.85
+  );
+  --secondary90: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.9
+  );
+  --secondary95: hsl(
+    #{hue($secondary-color-rgb)},
+    #{saturation($secondary-color-rgb)},
+    #{lightness($secondary-color-rgb)},
+    0.95
+  );
+
+  $accent-color-rgb: map-get(map-get($themes, $theme-name), accent);
+
+  --accent5: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.05
+  );
+  --accent10: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.1
+  );
+  --accent15: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.15
+  );
+  --accent20: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.2
+  );
+  --accent25: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.25
+  );
+  --accent30: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.3
+  );
+  --accent35: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.35
+  );
+  --accent40: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.4
+  );
+  --accent45: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.45
+  );
+  --accent50: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.5
+  );
+  --accent55: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.55
+  );
+  --accent60: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.6
+  );
+  --accent65: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.65
+  );
+  --accent70: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.7
+  );
+  --accent75: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.75
+  );
+  --accent80: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.8
+  );
+  --accent85: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.85
+  );
+  --accent90: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.9
+  );
+  --accent95: hsl(
+    #{hue($accent-color-rgb)},
+    #{saturation($accent-color-rgb)},
+    #{lightness($accent-color-rgb)},
+    0.95
+  );
+
+  --hex1: #{map-get(map-get($themes, $theme-name), text)};
+  --hex2: #{map-get(map-get($themes, $theme-name), background)};
+  --hex3: #{map-get(map-get($themes, $theme-name), primary)};
+}

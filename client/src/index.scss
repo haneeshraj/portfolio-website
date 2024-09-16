@@ -1,0 +1,53 @@
+@import "./styles/theme/themes";
+
+// Custom font family
+@font-face {
+  font-family: "Clash Display";
+  src: url("D:/Code/haneeshra-raj-portfolio/client/src/assets/fonts/ClashDisplay-Variable.woff2")
+    format("woff2");
+  font-weight: 1 900;
+}
+
+// Global styles
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+::selection {
+  background-color: var(--secondary65);
+  color: var(--text80);
+}
+
+button,
+input {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html[data-theme="light"] {
+  @include set-theme(light);
+}
+
+html[data-theme="dark"] {
+  @include set-theme(dark);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font-family);
+  font-weight: 500;
+  transition: all 300ms;
+}

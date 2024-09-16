@@ -1,0 +1,70 @@
+.navbar {
+  display: flex;
+  width: 110rem;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  position: fixed;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  &__logo {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -1px;
+    background-color: var(--text10);
+    padding: 0.6rem 1.6rem;
+    border-radius: 0.6rem;
+    user-select: none;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 5rem;
+    background-color: var(--text10);
+    padding: 1rem 3rem;
+    border-radius: 0.6rem;
+  }
+
+  &__navitem {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text60);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 300ms;
+
+    &:hover {
+      color: var(--text);
+    }
+  }
+
+  &__misc {
+    display: flex;
+    gap: 1.6rem;
+    background-color: var(--text10);
+    padding: 0.8rem 1.6rem;
+    border-radius: 0.6rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__search,
+  &__resume,
+  &__theme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    transition: all 300ms;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
