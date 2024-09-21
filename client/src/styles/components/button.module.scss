@@ -8,12 +8,12 @@
   &:hover {
     .icon {
       transform: rotate(360deg);
-      background-color: var(--secondary);
+      background-color: var(--primary);
     }
 
     .text {
       min-width: 30rem;
-      background-color: var(--secondary);
+      background-color: var(--primary);
     }
   }
 }
@@ -28,7 +28,8 @@
   text-align: center;
   font-weight: 500;
   max-width: 60rem;
-  background-color: var(--secondary80);
+  background-color: var(--primary80);
+  backdrop-filter: blur(1rem);
   width: max-content;
   border-radius: 100rem;
   height: 100%;
@@ -40,7 +41,8 @@
 }
 
 .icon {
-  background-color: var(--secondary80);
+  background-color: var(--primary80);
+  backdrop-filter: blur(1rem);
   border-radius: 100rem;
   height: 3.6rem;
   width: 3.6rem;

@@ -20,6 +20,7 @@
     padding: 0.6rem 1.6rem;
     border-radius: 0.6rem;
     user-select: none;
+    backdrop-filter: blur(1rem);
   }
 
   &__nav {
@@ -28,6 +29,7 @@
     background-color: var(--text10);
     padding: 1rem 3rem;
     border-radius: 0.6rem;
+    backdrop-filter: blur(1rem);
   }
 
   &__navitem {
@@ -51,6 +53,79 @@
     border-radius: 0.6rem;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(1rem);
+  }
+
+  &__search {
+    position: relative;
+
+    &::after {
+      content: "Search ( / )";
+
+      position: absolute;
+      left: 50%;
+      top: 3rem;
+      transform: translate(-50%, -50%);
+      background-color: var(--text10);
+      opacity: 0;
+      transition: all 100ms;
+      padding: 0.4rem 0.8rem;
+      width: max-content;
+      border-radius: 0.4rem;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      top: 4rem;
+    }
+  }
+
+  &__resume {
+    position: relative;
+
+    &::after {
+      content: "Resume";
+
+      position: absolute;
+      left: 50%;
+      top: 3rem;
+      transform: translate(-50%, -50%);
+      background-color: var(--text10);
+      opacity: 0;
+      transition: all 100ms;
+      padding: 0.4rem 0.8rem;
+      width: max-content;
+      border-radius: 0.4rem;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      top: 4rem;
+    }
+  }
+
+  &__theme {
+    position: relative;
+
+    &::after {
+      content: "Switch theme ( t )";
+
+      position: absolute;
+      left: 50%;
+      top: 3rem;
+      transform: translate(-50%, -50%);
+      background-color: var(--text10);
+      opacity: 0;
+      transition: all 100ms;
+      padding: 0.4rem 0.8rem;
+      width: max-content;
+      border-radius: 0.4rem;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      top: 4rem;
+    }
   }
 
   &__search,
@@ -59,12 +134,106 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0.5;
+    cursor: pointer;
+
+    svg {
+      opacity: 0.5;
+      transition: all 300ms;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.searchbar {
+  position: fixed;
+  left: 50%;
+  top: 10rem;
+  transform: translateX(-50%);
+  width: 60rem;
+  height: 4rem;
+  background-color: var(--text10);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(1rem);
+
+  &__icon {
+    margin-left: 1.6rem;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+    border: none;
+    cursor: text;
+    outline: none;
+    transition: all 300ms;
+  }
+
+  &__list {
+    position: fixed;
+    left: 50%;
+    top: 16rem;
+    transform: translateX(-50%);
+    background-color: var(--text10);
+    width: 60rem;
+    border-radius: 0.6rem;
+    padding: 0.6rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-direction: column;
+    backdrop-filter: blur(1rem);
+    transition: height 300ms;
+  }
+
+  &__item {
+    background-color: var(--text5);
+    padding: 2.6rem 3rem;
+    font-size: 1.2rem;
+    color: var(--text70);
     transition: all 300ms;
     cursor: pointer;
 
     &:hover {
-      opacity: 1;
+      background-color: var(--text10);
+      color: var(--text);
     }
+  }
+}
+
+.slash {
+  font-size: 1rem;
+  color: var(--text30);
+  margin: 0 1.6rem;
+  position: fixed;
+  bottom: 5rem;
+  left: calc(50% + 45rem);
+  transform: translateX(-50%);
+  background-color: var(--text5);
+  padding: 0.6rem 1rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: all 300ms;
+
+  code {
+    padding: 0.2rem 0.4rem;
+    background-color: var(--text10);
+    display: inline-block;
+    margin-inline: 0.4rem;
+  }
+
+  &:hover {
+    opacity: 1;
+    color: var(--text);
+    background-color: var(--text10);
   }
 }

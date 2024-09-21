@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Navbar from "./components/navbar/Navbar";
 import Container from "./components/container/Container";
-import Intro from "./section/Home/Intro";
-import Projects from "./section/Home/Projects";
+import { setTheme } from "./store/slice/themeSlice";
 
 function App() {
   const theme = useSelector(
@@ -19,11 +18,19 @@ function App() {
     };
   }, [theme]);
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // Retrieve the theme from localStorage when the component mounts
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      dispatch(setTheme(savedTheme));
+    }
+  }, [dispatch]);
+
   return (
     <Container>
       <Navbar />
-      <Intro />
-      <Projects />
     </Container>
   );
 }
